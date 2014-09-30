@@ -4,7 +4,6 @@
 //$__hosts__ = array('goagent.app.com');
 $__prefix__ = '';
 $__timeout__ = 16;
-echo '123';
 
 
 function php_getallheaders() {
@@ -38,14 +37,12 @@ function write_function($ch, $content) {
 
 
 function main() {
-    echo '----2';
     $timeout = $GLOBALS['__timeout__'];
     $method = $_SERVER['REQUEST_METHOD'] ;
     //$url = $GLOBALS['__relay__'];
     //$host = $GLOBALS['__hosts__'][array_rand($GLOBALS['__hosts__'])];
     $headers = php_getallheaders();
     $body = isset($GLOBALS['HTTP_RAW_POST_DATA']) ? $GLOBALS['HTTP_RAW_POST_DATA'] : '';
-    echo '----3';
     //$urlparts = parse_url($url);
 
     if ($body && !isset($headers['Content-Length'])) {
@@ -55,14 +52,12 @@ function main() {
         $headers['Connection'] = 'close';
     }
     //$headers['Host'] = $urlparts['host'];
-    echo '-----4';
     $header_array = array();
     foreach ($headers as $key => $value) {
         $header_array[] = "$key: $value";
     }
 
     $curl_opt = array();
-    echo '-----5';
     switch (strtoupper($method)) {
         case 'HEAD':
             $curl_opt[CURLOPT_NOBODY] = true;
@@ -78,7 +73,6 @@ function main() {
             $curl_opt[CURLOPT_POSTFIELDS] = $body;
             break;
     }
-    echo '------6';return;
     $curl_opt[CURLOPT_HTTPHEADER] = $header_array;
     $curl_opt[CURLOPT_RETURNTRANSFER] = true;
     $curl_opt[CURLOPT_BINARYTRANSFER] = true;
@@ -106,12 +100,12 @@ function main() {
 
     //var_dump(array('new_url' => $new_url, 'headers' => $headers, 'curl_opt' => $curl_opt));
     //exit(0);
-
+    echo __LINE__;return;
     $ch = curl_init($new_url);
     curl_setopt_array($ch, $curl_opt);
     $ret = curl_exec($ch);
     $errno = curl_errno($ch);
-
+    
     if ($errno) {
         if (!headers_sent()) {
             header('HTTP/1.1 502 Gateway Error');
