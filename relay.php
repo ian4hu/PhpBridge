@@ -93,7 +93,7 @@ function main() {
     //$new_url = preg_replace('@//[^/]+@', "//$host", $url);
     $uri = $_SERVER['REQUEST_URI'];
     $prefix = $GLOBALS['__prefix__'];
-    $new_url = 'http://thinkgeek.vicp.net:48080/canvas/'.substr($url, strlen($prefix));
+    $new_url = 'http://121.237.68.195:48080/canvas/'.substr($url, strlen($prefix));
     //if ($_SERVER['QUERY_STRING']) {
     //    $new_url .= '?' . $_SERVER['QUERY_STRING'];
     //}
@@ -104,7 +104,7 @@ function main() {
     curl_setopt_array($ch, $curl_opt);
     $ret = curl_exec($ch);
     $errno = curl_errno($ch);
-    echo __LINE__;return;
+
     if ($errno) {
         if (!headers_sent()) {
             header('HTTP/1.1 502 Gateway Error');
