@@ -39,14 +39,14 @@ function write_function($ch, $content) {
 
 function main() {
     echo '----2';
-    return;
     $timeout = $GLOBALS['__timeout__'];
     $method = $_SERVER['REQUEST_METHOD'] ;
     //$url = $GLOBALS['__relay__'];
     //$host = $GLOBALS['__hosts__'][array_rand($GLOBALS['__hosts__'])];
     $headers = php_getallheaders();
     $body = isset($GLOBALS['HTTP_RAW_POST_DATA']) ? $GLOBALS['HTTP_RAW_POST_DATA'] : '';
-
+    echo '----3';
+    return;
     //$urlparts = parse_url($url);
 
     if ($body && !isset($headers['Content-Length'])) {
