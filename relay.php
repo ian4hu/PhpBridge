@@ -46,7 +46,6 @@ function main() {
     $headers = php_getallheaders();
     $body = isset($GLOBALS['HTTP_RAW_POST_DATA']) ? $GLOBALS['HTTP_RAW_POST_DATA'] : '';
     echo '----3';
-    return;
     //$urlparts = parse_url($url);
 
     if ($body && !isset($headers['Content-Length'])) {
@@ -56,14 +55,14 @@ function main() {
         $headers['Connection'] = 'close';
     }
     //$headers['Host'] = $urlparts['host'];
-
+    echo '-----4';
     $header_array = array();
     foreach ($headers as $key => $value) {
         $header_array[] = "$key: $value";
     }
 
     $curl_opt = array();
-
+    echo '-----5';
     switch (strtoupper($method)) {
         case 'HEAD':
             $curl_opt[CURLOPT_NOBODY] = true;
@@ -79,7 +78,7 @@ function main() {
             $curl_opt[CURLOPT_POSTFIELDS] = $body;
             break;
     }
-
+    echo '------6';return;
     $curl_opt[CURLOPT_HTTPHEADER] = $header_array;
     $curl_opt[CURLOPT_RETURNTRANSFER] = true;
     $curl_opt[CURLOPT_BINARYTRANSFER] = true;
