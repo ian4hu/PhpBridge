@@ -19,4 +19,4 @@ handlers:
 # mod_rewrite by forwarding the requests to index.php?q=... (or other root-level
 # PHP file if specified in incoming URL.
 - url: /.*
-  script: index.php
+  script: PhpAgent.php
