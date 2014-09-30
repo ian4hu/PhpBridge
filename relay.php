@@ -100,12 +100,11 @@ function main() {
 
     //var_dump(array('new_url' => $new_url, 'headers' => $headers, 'curl_opt' => $curl_opt));
     //exit(0);
-    echo __LINE__;return;
     $ch = curl_init($new_url);
     curl_setopt_array($ch, $curl_opt);
     $ret = curl_exec($ch);
     $errno = curl_errno($ch);
-    
+    echo __LINE__;return;
     if ($errno) {
         if (!headers_sent()) {
             header('HTTP/1.1 502 Gateway Error');
