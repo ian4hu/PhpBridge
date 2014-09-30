@@ -23,15 +23,15 @@ function php_getallheaders() {
 
 
 function header_function($ch, $header) {
-    if (stripos($header, 'Transfer-Encoding:') === false) {
-        header($header, false);
-    }
+    //if (stripos($header, 'Transfer-Encoding:') === false) {
+    //    header($header, false);
+    //}
     return strlen($header);
 }
 
 
 function write_function($ch, $content) {
-    echo $content;
+    //echo $content;
     return strlen($content);
 }
 
