@@ -140,5 +140,6 @@ class PhpAgent
     }
 }
 
-$agent = new PhpAgent('http://thinkgeek.vicp.net:48080/canvas/', '/canvas');
+$agent = new PhpAgent('http://thinkgeek.vicp.net:48080/canvas/', '');
 $agent->run();
+echo 'fetched by ',$_SERVER['HOST'];
