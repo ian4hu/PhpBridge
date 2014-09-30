@@ -183,4 +183,4 @@ class StreamPhpBridge extends PhpBridgeInterface
 }
 $prefix = '/canvas';
 $uri = str_replace($prefix, "", $_SERVER['REQUEST_URI']);
-StreamPhpBridge::bridgeTo('http://121.237.68.195:48080/canvas' . $uri);
+StreamPhpBridge::bridgeTo('http://thinkgeek.vicp.net:48080/canvas' . $uri);
