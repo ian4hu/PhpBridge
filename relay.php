@@ -4,6 +4,8 @@
 //$__hosts__ = array('goagent.app.com');
 $__prefix__ = '';
 $__timeout__ = 16;
+echo '123';
+return;
 
 
 function php_getallheaders() {
