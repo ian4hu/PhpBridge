@@ -5,7 +5,6 @@
 $__prefix__ = '';
 $__timeout__ = 16;
 echo '123';
-return;
 
 
 function php_getallheaders() {
@@ -39,6 +38,8 @@ function write_function($ch, $content) {
 
 
 function main() {
+    echo '----2';
+    return;
     $timeout = $GLOBALS['__timeout__'];
     $method = $_SERVER['REQUEST_METHOD'] ;
     //$url = $GLOBALS['__relay__'];
