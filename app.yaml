@@ -2,6 +2,7 @@ application: love-log
 version: 1
 runtime: php
 api_version: 1
+threadsafe: false
 
 # env_variables:
 #  TMP: C:\Temp
