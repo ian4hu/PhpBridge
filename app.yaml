@@ -10,8 +10,8 @@ threadsafe: false
 
 handlers:
 # Example of handler which should be placed above the catch-all handler.
-- url: /downloads
-  static_dir: downloads
+#- url: /downloads
+#  static_dir: downloads
 
 - url: /canvas/.*
   script: PhpAgent.php
@@ -19,4 +19,4 @@ handlers:
 # mod_rewrite by forwarding the requests to index.php?q=... (or other root-level
 # PHP file if specified in incoming URL.
 - url: /.*
-  script: mod_rewrite.php
+  script: index.php
