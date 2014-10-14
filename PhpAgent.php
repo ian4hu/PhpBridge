@@ -32,7 +32,7 @@ abstract class PhpBridgeInterface
      *
      * @param string $target
      */
-    public static function bridgeTo($target, $timeout = 60);
+    public static function bridgeTo($target, $timeout = 60){};
 
     public static function onFailed($target, $message)
     {
