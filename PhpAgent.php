@@ -32,7 +32,7 @@ abstract class PhpBridgeInterface
      *
      * @param string $target
      */
-    abstract public static function bridgeTo($target, $timeout = 60);
+    public static function bridgeTo($target, $timeout = 60);
 
     public static function onFailed($target, $message)
     {
@@ -183,4 +183,4 @@ class StreamPhpBridge extends PhpBridgeInterface
 }
 $prefix = '/canvas';
 $uri = str_replace($prefix, "", $_SERVER['REQUEST_URI']);
-StreamPhpBridge::bridgeTo('http://prolove.duapp.com/canvas' . $uri);
+StreamPhpBridge::bridgeTo('http://thinkgeek.vicp.net:48080/canvas' . $uri);
